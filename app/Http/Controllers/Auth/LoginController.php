@@ -48,9 +48,11 @@ class LoginController extends Controller
 
     // Google Callback
     public function handleGoogleCallback() {
+        
         $user = Socialite::driver('google')->user();
 
         $user['provider'] = 'Google';
+        
 
         $this->_registerOrLoginUser($user);
 
